@@ -37,4 +37,55 @@ def login_process():
 def hello():
     name = flask.request.args.get('name', default = 'default string name = HaGa')
     name = flask.request.args.get('name', 'Flask')
-    return f'Hello, {markupsafe.escape(name)}!'
+    return f'Hello, {markupsafe.escape(name)} !'
+
+
+#ValueError: URL rule 'user' must start with a slash.
+@flask_application.route('/user/<username>')
+#TypeError: show_user_profile() missing 1 required positional argument: 'username'
+def show_user_profile(username):
+    #SyntaxError: f-string: valid expression required before '}'
+    return f'this is user {username} profile page.'
+
+
+@flask_application.route('/post/<int:post_id>')
+def show_post(post_id):
+    return f'post_id number {post_id}.'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

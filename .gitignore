@@ -1,9 +1,12 @@
 #ignore all __pycache__ directories recursively
+#using **/__pycache__/ ensures that Git ignores these cache folders at every level of your project depth (e.g., in subfolders or Django apps)
+**/__pycache__/
+
+
 #in the pattern *.py[cod], the brackets [cod] act as a character set match in Git glob syntax
 #it means "match exactly one character, which can be c, o, or d."
 #therefore, *.py[cod] is a shorthand way to match and ignore three specific compiled Python file extensions at once:
 #.pyc: compiled bytecode files (most common)
 #.pyo: optimized compiled bytecode files (used in older python versions)
 #.pyd: python dll files (dynamic libraries used on windows)
-**/__pycache__/
 *.py[cod]
