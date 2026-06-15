@@ -21,6 +21,12 @@ def home():
     return '<h1>AMD Hackathlon deadline is Sunday 12 July 2026 </h1>'
 
 
+@flask_application.route('/login')
+def login_abort_http_401():
+    #http 401 unauthorized error means your request failed because it lacks valid authentication credentials
+    flask.abort(401)
+
+
 #must include passing both parameter of methods=['POST', 'GET']) or Method Not Allowed for the requested url
 #because the default is @flask_application.route('/login', methods=['GET'])
 @flask_application.route('/login', methods=['POST', 'GET'])
@@ -30,11 +36,6 @@ def login():
         username = flask.request.form['username']
         return f'{username}'
     return flask.render_template('form.html')
-
-
-@flask_application.route('/login')
-
-
 
 
 #handles rendering the form
