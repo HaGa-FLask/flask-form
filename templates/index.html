@@ -1,0 +1,41 @@
+<title>flask file upload</title>
+
+<!--
+kata formulir berasal dari bahasa Belanda; formulier, yang berakar dari bahasa prancis formulaire
+formulaire diturunkan dari bahasa latin formularium (kumpulan bentuk),
+yang berasal dari kata dasar formula-bentuk kecil dari forma-yang berarti bentuk, cetakan, rupa, atau susunan
+
+a form is a structured document or digital interface with designated blank spaces, fields, or checkboxes meant to be filled out with specific information.
+they standardize data collection for applications, surveys, and registrations.
+
+the html <form> </form> tag is used to create an interactive section on a webpage to collect user input and transmit it to a web server
+
+<form method=post> tag needed, so you can submit
+<form method=get> wont render submit
+
+the html <input> tag does not have a closing tag because it is officially defined as a void element
+by the Web Hypertext Application Technology Working Group (WHATWG) html Living Standard Specification
+
+why void elements don't need closing tags ?
+- no child content: a closing tag (like </p>) tells the browser where a text block or nested element ends
+  because an <input> field cannot hold any text or other html elements inside it, there is no content to wrap
+- data via attributes: everything the browser needs to construct the input is provided inside the opening tag using attributes
+  (e.g., type="text", value="hello", placeholder="search")
+- the browser mechanism: when the browser parser encounters <input>,
+  it immediately knows to render a standalone interactive widget on the screen and move on to the next element.
+  writing </input> is considered invalid html
+
+other examples of void elements
+- according to the mdn web docs glossary on void elements, <input> belongs to a small family of singleton tags that never use a closing tag,
+  which includes:
+  <img> (images) <br> (line breaks) <hr> (horizontal rules) <meta> (page metadata) <link> (external stylesheets)
+
+what about the trailing slash (<input />) ?
+you might frequently see people or code formatters write inputs with a slash at the end, like <input type="text" />.
+in modern html5, this trailing slash is completely optional and purely cosmetic.
+it is a historical leftover from xhtml (a strict, xml-based version of html used in the 2000s) where every single tag was required to explicitly close.
+modern web browsers completely ignore the slash on void elements and treat <input> and <input /> exactly the same way
+-->
+<form action=/success>
+    <input type=file>
+</form>
